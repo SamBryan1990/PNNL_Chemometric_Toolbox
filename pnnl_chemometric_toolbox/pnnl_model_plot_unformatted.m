@@ -1,18 +1,18 @@
 function pnnl_model_plot_unformatted(modtype, comptype, Wavenumbers,...
         ConstituentNames, Wavenumberlabel, ConcentrationUnits, M_comps, ...
         C_train, C_predicted_train, C_validation, C_predicted)
-    %model_plot_unformatted Display model constituents.
-    %   model_plot_unformatted can be used to display model constituents or
-    %   regression factors from multivariate models, as well as displaying
-    %   the relationship between known values and values measured by
-    %   multivariate models for numerous constituents which contribute to
-    %   optical spectral signatures used to build the model.
+    %pnnl_model_plot_unformatted Display model constituents
+    %   pnnl_model_plot_unformatted can be used to display model
+    %   constituents or regression factors from multivariate models, as
+    %   well as displaying the relationship between known values and values
+    %   predicted by multivariate models for numerous constituents which
+    %   contribute to optical spectral signatures used to build the model.
     %
     %   These plots are not formatted for publications. Users of this
     %   function are encouraged to use these plots as a starting point and
     %   develop their MATLAB skills to produce publication-ready plots.
 
-    % Copyright 2022 Battelle Memorial Institute
+    % Copyright 2022-2023 Battelle Memorial Institute
     if nargin >= 11
         validationDataPresent = true;
     else
@@ -46,7 +46,7 @@ function pnnl_model_plot_unformatted(modtype, comptype, Wavenumbers,...
                 legend({'1:1 fit','Training set'},'Location','southeast')
             end
             xlabel(sprintf('Known %s (%s)',ConstituentNames{i},ConcentrationUnits))
-            ylabel(sprintf('Measured %s (%s)',ConstituentNames{i},ConcentrationUnits))
+            ylabel(sprintf('Predicted %s (%s)',ConstituentNames{i},ConcentrationUnits))
         hold off 
     end 
     sgtitle(strcat(modtype, ' model results'))
@@ -54,21 +54,23 @@ end
 
 % Disclaimer
 %
-% This material was prepared as an account of work sponsored by an agency of the
-% United States Government.  Neither the United States Government nor the United
-% States Department of Energy, nor Battelle, nor any of their employees, nor any
-% jurisdiction or organization that has cooperated in the development of these
-% materials, makes any warranty, express or implied, or assumes any legal
-% liability or responsibility for the accuracy, completeness, or usefulness or
-% any information, apparatus, product, software, or process disclosed, or
-% represents that its use would not infringe privately owned rights.
+% This material was prepared as an account of work sponsored by an agency
+% of the United States Government.  Neither the United States Government
+% nor the United States Department of Energy, nor Battelle, nor any of
+% their employees, nor any jurisdiction or organization that has cooperated
+% in the development of these materials, makes any warranty, express or
+% implied, or assumes any legal liability or responsibility for the
+% accuracy, completeness, or usefulness or any information, apparatus,
+% product, software, or process disclosed, or represents that its use would
+% not infringe privately owned rights.
 % 
-% Reference herein to any specific commercial product, process, or service by
-% trade name, trademark, manufacturer, or otherwise does not necessarily
-% constitute or imply its endorsement, recommendation, or favoring by the United
-% States Government or any agency thereof, or Battelle Memorial Institute. The
-% views and opinions of authors expressed herein do not necessarily state or
-% reflect those of the United States Government or any agency thereof.
+% Reference herein to any specific commercial product, process, or service
+% by trade name, trademark, manufacturer, or otherwise does not necessarily
+% constitute or imply its endorsement, recommendation, or favoring by the
+% United States Government or any agency thereof, or Battelle Memorial
+% Institute. The views and opinions of authors expressed herein do not
+% necessarily state or reflect those of the United States Government or any
+% agency thereof.
 % 
 %                  PACIFIC NORTHWEST NATIONAL LABORATORY
 %                               operated by

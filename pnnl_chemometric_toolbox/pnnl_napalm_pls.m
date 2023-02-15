@@ -1,12 +1,13 @@
 function [C_pls, RMSEP_pls, C_pls_train, RMSEC_pls, C_pls_cross_validation, RMSECV_pls, data] = pnnl_napalm_pls(nLatentVariables,varargin)
     %pnnl_napalm_pls Partial least squares (PLS) regression on the napalm data
     %
-    %   pnnl_napalm_pls(r) with no output parameters performs partial least squares regression
-    %   on the napalm data with r latent variables
-    %   and plots the results.  If r is a vector, then PLS is repeated
-    %   for each of the r(i) number of latent variables.
+    %   pnnl_napalm_pls(r) with no output parameters performs partial least
+    %   squares regression on the napalm data with r latent variables and
+    %   plots the results.  If r is a vector, then PLS is repeated for each
+    %   of the r(i) number of latent variables.
     %
-    %   [C_pls, RMSEP_pls, C_pls_train, RMSEC_pls, C_pls_cross_validation, RMSECV_pls, data] = pnnl_napalm_pls(r)
+    %   [C_pls, RMSEP_pls, C_pls_train, RMSEC_pls, ...
+    %    C_pls_cross_validation, RMSECV_pls, data] = pnnl_napalm_pls(r)
     %   with output parameters performs partial least squares on
     %   the napalm data and returns the results without plotting.
     %   If r is a vector, then PCR is repeated for each of the r(i) number 
@@ -16,15 +17,18 @@ function [C_pls, RMSEP_pls, C_pls_train, RMSEC_pls, C_pls_cross_validation, RMSE
     %
     %   Examples:
     %
-    %      % Plot results of PLS on napalm data for 2, 4, and 8 latent variables
+    %      % Plot results of PLS on napalm data for 2, 4, 
+    %      % and 8 latent variables
     %      r = [2 4 8];
     %      pnnl_napalm_pls(r)
     %
-    %      % Return results of PLS on napalm data for 2, 4, and 8 latent variables without plotting
+    %      % Return results of PLS on napalm data for 2, 4, 
+    %      % and 8 latent variables without plotting
     %      r = [2 4 8];
-    %      [C_pls, RMSEP_pls, C_pls_train, RMSEC_pls, C_pls_cross_validation, RMSECV_pls, data] = pnnl_napalm_pls(r)
+    %      [C_pls, RMSEP_pls, C_pls_train, RMSEC_pls, ...
+    %       C_pls_cross_validation, RMSECV_pls, data] = pnnl_napalm_pls(r)
 
-    % Copyright 2022 Battelle Memorial Institute
+    % Copyright 2022-2023 Battelle Memorial Institute
     data = load('pnnl_napalm_data');
     A_train = data.A_train;
     C_train = data.C_train;
